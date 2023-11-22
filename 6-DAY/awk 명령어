@@ -6,10 +6,24 @@ awk 명령어
   - 패턴 : 패턴이 없는 경우 모든 라인을 대상으로 작업한다.
   - 필드 분리 : 공백 문자를 기준으로 텍스트 라인을 필드로 분리한다. $1, $2 ...
 
+예시
 
-$ awk -F: '{print "user name : " $1 ", home directory : " $6}' /etc/passwd
+1) /etc/passwd 파일에서 사용자 이름과 홈 디렉토리 정보만 출력
+  - $ awk -F: '{print "user name : " $1 ", home directory : " $6}' /etc/passwd
+
+2) vim data.csv
+  kim,10,seoul
+  lee,20,jeju
+  park,30,busan
+  hong,40,gyeonggi-do
+  mun,50,gwangju
+
+3) jeju라는 문자열이 있는 레코드를 찾아 그 행 전체값을 출력
+ - $ awk '/jeju/{print $0}' data.csv
+
+3) NR은 일련번호를 알려준다.
+$ awk -F, '{print NR, $1}' data.csv
 
 
-
-
+awk -F, '$2 > 20 {print $0}' data.csv
 
