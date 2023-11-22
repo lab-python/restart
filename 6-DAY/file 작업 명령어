@@ -1,0 +1,22 @@
+
+1. sort 
+  - 파일의 내용을 정렬한다.
+  
+  $ vim hi.txt      
+      Hello
+      Hi
+      GoodBye
+      Morning
+      Hello
+
+  $ sort hi.txt
+
+
+2. uniq
+  - 중복된 내용을 제거한한다.
+
+  $ sort hi.txt | uniq
+
+  
+
+
