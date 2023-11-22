@@ -24,6 +24,6 @@ awk 명령어
 3) NR은 일련번호를 알려준다.
 $ awk -F, '{print NR, $1}' data.csv
 
-
+4) 나이가 20 초과한 정보 사용자 정보 출력
 awk -F, '$2 > 20 {print $0}' data.csv
 
