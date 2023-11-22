@@ -1,0 +1,12 @@
+tee 명령어
+
+- 표준 출력과 파일에 쓰는 명령어
+
+  $ echo "Hello, World" | tee  file
+
+  $ echo "Hello, World" | tee -a file  : append
+
+
+- tee 명령어를 사용하여 파일 복사
+
+  $ cat file | tee newfile
