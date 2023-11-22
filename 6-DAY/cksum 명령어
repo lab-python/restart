@@ -1,0 +1,10 @@
+cksum 명령어
+- 파일의 무결성 
+
+$ ls | xargs cksum
+
+$ sudo find ~ -type f  -exec cksum {} \;
+
+$ sudo find ~ -type f ! -name '.*'  -exec cksum {} \;
+
+
