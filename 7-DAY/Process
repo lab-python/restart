@@ -1,0 +1,16 @@
+
+# 현재 실행중인 프로세스 목록 조회
+  $ ps -ef --forest
+
+# 현재 실행중인 pid 조회
+  $ echo $$
+
+$ vim process.sh
+  
+  #!/bin/bash
+  
+  while [ i ];do
+          echo "Hello, pid $$"
+          sleep 3
+  done
+       
