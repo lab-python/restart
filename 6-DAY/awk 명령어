@@ -1,4 +1,4 @@
-awk 명령어
+1. awk 명령어
 
 - 텍스트 데이터를 처리하고 분석하는 유용한 명령어
 
@@ -9,21 +9,91 @@ awk 명령어
 예시
 
 1) /etc/passwd 파일에서 사용자 이름과 홈 디렉토리 정보만 출력
-  - $ awk -F: '{print "user name : " $1 ", home directory : " $6}' /etc/passwd
+   - $ awk -F: '{print "user name : " $1 ", home directory : " $6}' /etc/passwd
 
 2) vim data.csv
-  kim,10,seoul
-  lee,20,jeju
-  park,30,busan
-  hong,40,gyeonggi-do
-  mun,50,gwangju
 
-3) jeju라는 문자열이 있는 레코드를 찾아 그 행 전체값을 출력
- - $ awk '/jeju/{print $0}' data.csv
+      kim,10,seoul
+      lee,20,jeju
+      park,30,busan
+      hong,40,gyeonggi-do
+      mun,50,gwangju
+
+3) data.csv 파일에서 jeju라는 문자열이 있는 레코드를 찾아 그 행 전체값을 출력
+   - $ awk '/jeju/{print $0}' data.csv
 
 3) NR은 일련번호를 알려준다.
-$ awk -F, '{print NR, $1}' data.csv
+  - $ awk -F, '{print NR, $1}' data.csv
 
 4) 나이가 20 초과한 정보 사용자 정보 출력
-awk -F, '$2 > 20 {print $0}' data.csv
+   - awk -F, '$2 > 20 {print $0}' data.csv
+
+
+2. cut 명령어
+
+  1) vim names.csv
+
+        Alejandro Rosalez,42,Cherbourg,FR
+        Carlos Salazar,33,Paris,FR
+        Li Juan,25,Bordeaux,FR
+
+  2) "names.csv"라는 CSV 파일에서 쉼표(,)로 구분된 데이터에서 첫 번째 열(첫 번째 필드)을 추출
+     - $cut -d ',' -f 1 names.csv 
+
+  3) "names.csv"라는 CSV 파일에서 각 줄의 첫 번째 문자와 두 번째 문자를 추출
+     - $cut -c 1-2 names.csv 
+
+
+
+3. sed 명령어
+
+- 강력한 텍스트 처리 도구
+- 제공된 규칙에 따라 데이터 편집(삽입, 삭제, 검색, 바꾸기)
+- 정규 표현식 지원
+
+- sed [옵션] '명령어' 파일명
+
+  1) 텍스트 검색 및 출력
+      $ sed -n '/pattern/p' filename
+      
+      [예시]
+
+      - 특정한 "pattern"을 포함하는 줄만 출력하는 예제
+    
+          $ vim example.txt
+              This is a line with some text.
+              Another line with the pattern we want.
+              This line doesn't contain the pattern.
+              Pattern can appear multiple times in a line: pattern pattern.
+    
+          $ sed -n '/pattern/p' example.txt  
+            
+            [output]
+            Another line with the pattern we want.
+            Pattern can appear multiple times in a line: pattern pattern.
+ 
+  2) 텍스트 대체
+     $ sed 's/old_pattern/new_pattern/g' filename
+
+  3) 'pattern' 문자열을 포함하는 특정 줄 삭제
+     $ sed '/pattern/d' filename
+  
+  4) 특정 줄 추가:
+     $ sed 'N a\new_line_text' filename
+
+     $ sed '/Line 1/a\Nes Line' example.txt
+  
+  5) 특정 패턴 이전에 삽입:
+     $ sed '/pattern/i\new_line_text' filename
+  
+
+ 
+
+
+
+
+
+
+
+
 
