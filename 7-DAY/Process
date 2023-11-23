@@ -13,4 +13,7 @@ $ vim process.sh
           echo "Hello, pid $$"
           sleep 3
   done
-       
+
+
+-- process.sh 스크립트 실행도 Bash의 child process로 실행된다.
+-- process.sh 스크립트에서 실행되는 명려어들도 process.sh  스크립트의 자식 프로세스로 동작한다.
