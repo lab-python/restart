@@ -197,11 +197,11 @@ OSI 참조 모델
 
 7 Layer : Aplication 
 6 Layer : Presentation
-7 Layer : Session
-7 Layer : Transport
-7 Layer : Network
-7 Layer : Data link
-7 Layer : Physical
+5 Layer : Session
+4 Layer : Transport
+3 Layer : Network
+2 Layer : Data link
+1 Layer : Physical
 
 
 7계층 : Application Layer
@@ -219,6 +219,13 @@ OSI 참조 모델
 
 
 6 Layer : Presentation   
+
+  - 데이터 변환 : 서로 다른 시스템 간에 데이터를 공유하고 이해하기 위해서 데이터의 표현 형식을 변환합니다.
+  - 암호화 및 복호화 :  데이터를 보안적으로 안전하게 전송하기 위해서  암호화 및 복호화 작업을 수행할 수 있다.
+  - 데이터 압축 : 데이터를 압축하여 전송 효율을 높일 수 있습니다.
+
+
+
 
 
 
