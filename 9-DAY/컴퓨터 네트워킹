@@ -190,13 +190,35 @@ OSI 참조 모델 계층화의 장점
  
   
   
+OSI 참조 모델
+
+- 네트워크 통신을 이해하기 위해서는 OSI 참조 모델을 이해해야 합니다.
 
 
+7 Layer : Aplication 
+6 Layer : Presentation
+7 Layer : Session
+7 Layer : Transport
+7 Layer : Network
+7 Layer : Data link
+7 Layer : Physical
 
+
+7계층 : Application Layer
+
+  - 응용 프로그램과 통신 프로그램(네트워크 프로토콜) 사이에서 인터페이스 역할을 담당한다.
+
+  [예시]
+
+    - 웹 브라우저(응용 프로그램)는 사용자가 웹 페이지를 요청하면 응용 계층은 HTTP 프로토콜(통신 프로그램)을 사용하여 웹 서버와 통신합니다.
   
-  
+    - FTP : 파일 전송 프로토콜
+    - SMTP : 메일 전송 프로토콜
+    - SSH : 암호화 원격 접속
+    - HTTP, HTTPS 
 
 
+6 Layer : Presentation   
 
 
 
