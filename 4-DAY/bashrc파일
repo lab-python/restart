@@ -1,0 +1,29 @@
+
+.bashrc 파일 내용 편집
+
+# 별칭
+alias ll='ls -al'
+
+# 사용자 정의 함수
+
+function backup {
+  cp "$1" "${1}.bak"
+}
+
+
+--  변경된 내용을 반영하려면 
+
+[ec2-user@ip-172-31-42-133 ~]$  source .bashrc
+
+[ec2-user@ip-172-31-42-133 ~]$  backup  백업하고자 하는 파일명
+
+
+
+
+
+
+
+
+
+
+
