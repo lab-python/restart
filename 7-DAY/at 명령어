@@ -41,6 +41,9 @@ ls -al ~/ > ~/file1.txt
 
 
 
+[ec2-user@ip-172-31-42-133 ~]$ echoecho $(date +%Y-%m-%d" "%H:%M)
+
+출력 결과 : 2024-01-09 15:48
 
 
 crontab -e
