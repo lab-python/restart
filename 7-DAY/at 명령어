@@ -1,0 +1,41 @@
+at 명령어
+
+- 리눅스에서 at 명령어는 특정 시간에 한 번만 실행할 작업을 예약하는 데 사용됩니다.  
+
+- at 명령어는 atd (at daemon) 서비스가 실행 중이어야 작동합니다.
+
+타임존 변경
+
+timedatectl
+
+sudo timedatectl set-timezone Asia/Seoul
+
+
+
+[ec2-user@ip-172-31-42-133 ~]$  at 14:00 2024-01-09
+at> list -al > ~/list.txt
+at> <EOT>     CTRL + D 를 선택한다.
+
+
+- 예정된 작업을 표시한다.
+[ec2-user@ip-172-31-42-133 ~]$ at -l (영어 )
+
+15      Tue Jan  9 14:55:00 2024 a ec2-user
+
+- 예정된 작업을 삭제한다.
+
+[ec2-user@ip-172-31-42-133 ~]$  atrm  15
+
+
+-- hello.sh
+
+#!/bin/bash
+
+ls -al ~/ > ~/file1.txt
+
+[ec2-user@ip-172-31-42-133 ~]$ at 15:00 2024-01-09  -f  ./hello.sh
+
+- 예정된 작업을 표시한다.
+[ec2-user@ip-172-31-42-133 ~]$ at -l (영어 )
+
+
