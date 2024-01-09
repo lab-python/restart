@@ -39,18 +39,22 @@ ls -al ~/ > ~/file1.txt
 [ec2-user@ip-172-31-42-133 ~]$ at -l (영어 )
 
 
-backup_file="backup_$(date +%Y%m%d).tar.gz"
-tar -czf $backup_file /path/to/directory
-
-스크립트 파일 작성하는 경우
-
-today=$(date +%Y%m%d)
-echo "Today's date is $today"
 
 
 
 
+crontab -e
 
+-- 1분마다 백업
+* * * * * tar -czvf /home/ec2-user/backup_$(date +\%Y\%m\%d\%H\%M).tar.gz /home/ec2-user
+
+crontab -l
+
+
+
+모든 crontab 작업 삭제하려면
+
+crontab -r
 
 
 
