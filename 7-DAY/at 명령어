@@ -60,6 +60,9 @@ crontab -l
 crontab -r
 
 
+htop 명령어
+
+
 
 
 
